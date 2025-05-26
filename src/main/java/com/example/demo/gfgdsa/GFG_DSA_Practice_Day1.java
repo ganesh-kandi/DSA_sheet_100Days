@@ -3,7 +3,7 @@ package com.example.demo.gfgdsa;
 public class GFG_DSA_Practice_Day1 {
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 4, 5}; // Input array
+        int[] arr = {1, 2, 3, 4, 5, 5}; // Input array
         int sum = 20; // Target product value
 
         // Check if there is a subarray with the given product and print the result
@@ -12,6 +12,7 @@ public class GFG_DSA_Practice_Day1 {
         int arr1[] = {1, 2, -5, -4}; // Input array
         int product = 20;
         System.out.println(hasSubarrayWithProductOA(arr,product));
+        findTwoArrays(arr);
     }
     static boolean hasSubarrayWithSum(int[] arr, int k) {
         int n= arr.length;
@@ -94,4 +95,38 @@ public class GFG_DSA_Practice_Day1 {
         }
         return (double) maxSum/k;
     }
+
+    public static int findSplitPoint(int[] arr) {
+        int n= arr.length;
+        int leftSum=0;
+        for(int i: arr){
+            leftSum +=i;
+        }
+
+        int rightSum=0;
+        for(int i= n-1; i>=0; i--){
+            rightSum += arr[i];
+
+            leftSum -=arr[i];
+            if(leftSum == rightSum){
+                return i;
+            }
+        }
+        return -1;
+    }
+    static void findTwoArrays(int[] arr){
+        int n= arr.length;
+        int splitPoint = findSplitPoint(arr);
+        if(splitPoint==-1 || splitPoint== n){
+            System.out.println("not possible");
+        }
+        else{
+            for(int i=0; i<n;i++){
+                if(splitPoint==i)
+                    System.out.println();
+                System.out.print(arr[i]+ " ");
+            }
+        }
+    }
+
 }
