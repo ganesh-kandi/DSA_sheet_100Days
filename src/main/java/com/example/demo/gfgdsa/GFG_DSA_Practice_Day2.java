@@ -1,6 +1,8 @@
 package com.example.demo.gfgdsa;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GFG_DSA_Practice_Day2 {
@@ -46,4 +48,26 @@ public class GFG_DSA_Practice_Day2 {
             }
         }
     }
+
+    static List<Integer> findEquilibriumIndices(int[] arr) {
+        List<Integer> list = new ArrayList<>();
+        int totalSum=0;
+
+        for(int i: arr){
+            totalSum +=i;
+        }
+
+        int leftSum=0;
+        int rightSum=0;
+
+        for(int i=0; i<arr.length;i++){
+            rightSum = totalSum-leftSum-arr[i];
+            if(rightSum== leftSum){
+                list.add(i);
+            }
+            leftSum+=arr[i];
+        }
+        return list;
+    }
+
 }

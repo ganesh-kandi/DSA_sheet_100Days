@@ -68,7 +68,7 @@ public class GFG_DSA_Practice_Day1 {
         int final_Sum= Integer.MIN_VALUE;
 
         for(int i: arr){
-            cur_Sum +=cur_Sum;
+            cur_Sum +=i;
 
             if(final_Sum< cur_Sum){
                 final_Sum= cur_Sum;
