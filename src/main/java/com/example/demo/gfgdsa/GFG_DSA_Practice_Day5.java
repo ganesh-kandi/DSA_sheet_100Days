@@ -1,8 +1,18 @@
 package com.example.demo.gfgdsa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GFG_DSA_Practice_Day5 {
     public static void main(String[] args) {
         bitwiseOperators();
+        int[] arr= {10,22,12,3,0,6};
+        List<Integer> list = leaders(arr);
+        for(int i: list){
+            System.out.print(i + ", ");
+        }
+
+
     }
     static void bitwiseOperators(){
         N2B(12);
@@ -20,5 +30,18 @@ public class GFG_DSA_Practice_Day5 {
         System.out.println(a);
 
         return a;
+    }
+    static List<Integer> leaders(int[] arr){
+        List<Integer> ans= new ArrayList<>();
+        int maxi= Integer.MIN_VALUE;
+
+        for(int i=arr.length-1; i>=0;i--){
+            if(arr[i]>maxi){
+                ans.add(arr[i]);
+            }
+            maxi = Math.max(arr[i], maxi);
+        }
+
+        return ans;
     }
 }
