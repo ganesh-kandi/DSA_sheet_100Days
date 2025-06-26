@@ -7,10 +7,12 @@ import java.util.Set;
 
 public class GFG_DSA_Practice_Day2 {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 5}; // Input array
-        System.out.println(containsDuplicate(arr));
+        int[] arr = {1,3,2,4,3,2,1}; // Input array
+        //System.out.println(containsDuplicate(arr));
 
-        System.out.println(BinarySearch(arr,4));
+        //System.out.println(BinarySearch(arr,4));
+
+        System.out.println(findEquilibriumIndices(arr));
     }
 
 

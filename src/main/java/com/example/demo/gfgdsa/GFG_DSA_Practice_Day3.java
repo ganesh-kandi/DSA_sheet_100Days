@@ -1,5 +1,6 @@
 package com.example.demo.gfgdsa;
 
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,10 +20,11 @@ public class GFG_DSA_Practice_Day3 {
 //        for (int i:arr) {
 //            System.out.print(i + ", ");
 //        }
-        mergeTwoSortedArrays(arr, 7, arr2, 6);
+        //mergeTwoSortedArrays(arr, 7, arr2, 6);
 //        for (int i:arr) {
 //            System.out.print(i + ", ");
 //        }
+        demo();
 
     }
 
@@ -140,5 +142,10 @@ public class GFG_DSA_Practice_Day3 {
             System.out.print(k+", ");
         }
     }
+    public static void demo(){
+        int h= 10;
+        //Period p= Period.between()
+    }
+
 
 }

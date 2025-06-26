@@ -11,8 +11,9 @@ public class GFG_DSA_Practice_Day1 {
 
         int arr1[] = {1, 2, -5, -4}; // Input array
         int product = 20;
-        System.out.println(hasSubarrayWithProductOA(arr,product));
+        //System.out.println(hasSubarrayWithProductOA(arr,product));
         findTwoArrays(arr);
+        //System.out.println(8/3);
     }
     static boolean hasSubarrayWithSum(int[] arr, int k) {
         int n= arr.length;
