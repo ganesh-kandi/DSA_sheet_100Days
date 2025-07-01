@@ -7,8 +7,9 @@ public class Strings_DSA_Practice_Day17 {
     //fizzbuzz(15);
        String[] arr = {"flower","flow","floight"};
         //longestCommonPrefix(arr);
-        //System.out.println(longestSubStringWithoutSameChar("abatman"));
-        System.out.println(validParentheses("([])"));
+        System.out.println(longestSubStringWithoutSameChar("abatman"));
+        System.out.println(longestSubStringWithoutSameCharUsingHashMap("abatman"));
+        //System.out.println(validParentheses("([])"));
     }
 
     static void fizzbuzz(int k){
@@ -78,6 +79,22 @@ public class Strings_DSA_Practice_Day17 {
 
         }
         return maxElement;
+    }
+
+    static int longestSubStringWithoutSameCharUsingHashMap(String str){
+        Map<Character,Integer> map = new HashMap<>();
+        int left=0; int maxLength=0;
+        for(int right=0;right<str.length();right++){
+            char ch= str.charAt(right);
+
+            if(map.containsKey(ch)){
+                left = Math.max(map.get(ch)+1,left);
+            }
+            map.put(ch,right);
+            maxLength = Math.max(maxLength,right-left+1);
+        }
+        return maxLength;
+
     }
 
     static boolean validParenthesesBrute(String str){
