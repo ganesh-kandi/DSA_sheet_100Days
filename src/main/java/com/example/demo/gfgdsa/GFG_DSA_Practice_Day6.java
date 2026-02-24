@@ -30,6 +30,15 @@ public class GFG_DSA_Practice_Day6 {
 
         }
     }
+    static int removeDuplicates(int[] arr) {
+        int i=0;
+        for(int n: arr){
+            if(i==0 || n!= arr[i-1]){
+                arr[i++]=n;
+            }
+        }
+        return i;
+    }
 
 
     static boolean compareTwoStrings(String s1, String s2) {

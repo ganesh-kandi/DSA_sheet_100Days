@@ -1,5 +1,9 @@
 package com.example.demo.gfgdsa;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 public class GFG_DSA_Practice_Day1 {
     public static void main(String[] args) {
 
@@ -27,6 +31,16 @@ public class GFG_DSA_Practice_Day1 {
             }
         }
         return false;
+    }
+    static int hasSubarWithSum(int[] arr, int k) {
+        int currSum=0;
+        int maxSum=0;
+        for (int i=0; i<arr.length;i++){
+            currSum= Math.max(arr[i], currSum+arr[i]);
+            maxSum= Math.max(maxSum, currSum);
+
+        }
+        return maxSum;
     }
     //bruteforce approach
     //TC: O(N^2), O(1)
@@ -89,9 +103,9 @@ public class GFG_DSA_Practice_Day1 {
             sum += j;
         }
         int maxSum= sum;
-        //slilde the window
+        //slide the window
         for(int i=k;i<n;i++){
-            sum = sum -arr[i-k]+arr[i];
+            sum = sum - arr[i-k]+arr[i];
             maxSum= Math.max(sum, maxSum);
         }
         return (double) maxSum/k;
